@@ -4,8 +4,7 @@ url: >-
 apis:
   - aid: apigovernance-dev:apigovernance-dev
     name: APIGovernance.Dev
-    tags:
-      - API
+    tags: []
     humanURL: https://apigovernance.dev/
     properties:
       - url: https://apigovernance.dev/
@@ -15,11 +14,11 @@ apis:
       for standardization and compliance in API design and development.
 name: APIGovernance.Dev
 tags:
-  - Governance
-  - Platform
-  - Design
-  - Guidelines
   - Compliance
+  - Design
+  - Governance
+  - Guidelines
+  - Platform
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
