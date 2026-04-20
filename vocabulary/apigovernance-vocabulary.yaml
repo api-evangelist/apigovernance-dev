@@ -1,0 +1,95 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "APIGovernance.Dev"
+  description: "Vocabulary for API governance covering guidelines, policies, reviews, and best practices for standardized API design and compliance."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: APIGovernance.Dev
+      namespace: apigovernance
+      version: "1.0"
+      baseUrl: https://apigovernance.dev
+      status: active
+
+  resources:
+    - name: guidelines
+      description: API governance guidelines and best practices.
+    - name: policies
+      description: Policy sets composed of multiple guidelines.
+    - name: reviews
+      description: Automated API specification review results.
+
+  schemas:
+    core:
+      - name: Guideline
+        description: An individual API governance best practice or rule.
+      - name: Policy
+        description: A named set of guidelines forming a governance policy.
+      - name: Review
+        description: An automated review result against governance guidelines.
+
+  enums:
+    severity: [critical, high, medium, low, info]
+    enforcement: [blocking, advisory, informational]
+    review_status: [passed, failed, warning]
+    governance_categories:
+      - Security
+      - Design
+      - Documentation
+      - Versioning
+      - Performance
+      - Authentication
+      - Error Handling
+      - Naming Conventions
+      - Rate Limiting
+      - Pagination
+
+  parameters:
+    governance_dimensions:
+      - Security
+      - Consistency
+      - Completeness
+      - Usability
+      - Performance
+      - Compliance
+
+capability:
+  workflows:
+    - name: API Governance Review
+      description: Automated review of API specifications against governance guidelines.
+      personas: [API Developer, CTO, API Governance Lead]
+
+  personas:
+    - id: api-developer
+      name: API Developer
+      description: Developer following governance guidelines to build standards-compliant APIs.
+    - id: cto
+      name: CTO
+      description: Leader enforcing API governance standards across engineering teams.
+    - id: api-governance-lead
+      name: API Governance Lead
+      description: Specialist maintaining governance policies and reviewing API compliance.
+
+  domains:
+    - name: API Governance
+      description: The practice of establishing and enforcing standards, policies, and best practices for API design and management.
+      concepts:
+        - Guidelines
+        - Policies
+        - Reviews
+        - Compliance
+        - Standards
+        - Design Rules
+        - Security Requirements
+        - Documentation Standards
+
+crossReference:
+  - resource: guidelines
+    personas: [API Developer, API Governance Lead]
+  - resource: reviews
+    personas: [API Developer, CTO, API Governance Lead]
+  - resource: policies
+    personas: [CTO, API Governance Lead]

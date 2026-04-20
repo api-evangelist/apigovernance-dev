@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apigovernance-dev/refs/heads/main/json-structure/apigovernance-policy-structure.json",
+  "description": "An API governance policy composed of multiple guidelines.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Policy identifier.",
+      "example": "pol-001"
+    },
+    "name": {
+      "type": "string",
+      "description": "Policy name.",
+      "example": "API Security Policy"
+    },
+    "description": {
+      "type": "string",
+      "description": "Policy description."
+    },
+    "guidelines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of guideline IDs included in this policy."
+    },
+    "enforcement": {
+      "type": "string",
+      "enum": [
+        "blocking",
+        "advisory",
+        "informational"
+      ],
+      "description": "How this policy is enforced."
+    }
+  },
+  "name": "Policy"
+}

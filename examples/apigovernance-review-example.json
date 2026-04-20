@@ -1,0 +1,8 @@
+{
+  "id": "rev-001",
+  "apiSpecUrl": "https://example.com/openapi.yaml",
+  "score": 87.5,
+  "violations": 3,
+  "createdAt": "2026-04-19T10:00:00Z",
+  "status": "warning"
+}

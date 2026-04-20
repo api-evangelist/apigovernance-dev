@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apigovernance-dev/refs/heads/main/json-structure/apigovernance-guideline-structure.json",
+  "description": "An API governance guideline or best practice.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the guideline.",
+      "example": "gl-001"
+    },
+    "category": {
+      "type": "string",
+      "description": "Governance category (e.g., Security, Design, Documentation).",
+      "example": "Security"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short title of the guideline.",
+      "example": "Use HTTPS for all API endpoints"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the guideline."
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "critical",
+        "high",
+        "medium",
+        "low",
+        "info"
+      ],
+      "description": "Severity level of violation."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags categorizing the guideline."
+    }
+  },
+  "name": "Guideline"
+}

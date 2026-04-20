@@ -1,0 +1,10 @@
+{
+  "id": "pol-001",
+  "name": "API Security Policy",
+  "description": "Comprehensive security policy for all APIs.",
+  "guidelines": [
+    "gl-001",
+    "gl-002"
+  ],
+  "enforcement": "blocking"
+}

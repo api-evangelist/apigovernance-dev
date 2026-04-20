@@ -1,0 +1,12 @@
+{
+  "id": "gl-001",
+  "category": "Security",
+  "title": "Use HTTPS for All API Endpoints",
+  "description": "All API endpoints must be served over HTTPS to ensure data security in transit.",
+  "severity": "critical",
+  "tags": [
+    "Security",
+    "HTTPS",
+    "Transport"
+  ]
+}

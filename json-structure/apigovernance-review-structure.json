@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apigovernance-dev/refs/heads/main/json-structure/apigovernance-review-structure.json",
+  "description": "An automated API governance review result.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Review identifier.",
+      "example": "rev-001"
+    },
+    "apiSpecUrl": {
+      "type": "uri",
+      "description": "URL of the reviewed API specification."
+    },
+    "score": {
+      "type": "double",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall governance score.",
+      "example": 87.5
+    },
+    "violations": {
+      "type": "int32",
+      "description": "Number of guideline violations found.",
+      "example": 3
+    },
+    "createdAt": {
+      "type": "datetime",
+      "description": "When the review was created."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "warning"
+      ],
+      "description": "Review status."
+    }
+  },
+  "name": "Review"
+}

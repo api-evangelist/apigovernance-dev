@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apigovernance-dev/refs/heads/main/json-schema/apigovernance-review-schema.json",
+  "title": "Review",
+  "description": "An automated API governance review result.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Review identifier.",
+      "example": "rev-001"
+    },
+    "apiSpecUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the reviewed API specification."
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall governance score.",
+      "example": 87.5
+    },
+    "violations": {
+      "type": "integer",
+      "description": "Number of guideline violations found.",
+      "example": 3
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the review was created."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "warning"
+      ],
+      "description": "Review status."
+    }
+  }
+}
