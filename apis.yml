@@ -42,7 +42,7 @@ apis:
       - url: json-schema/apigovernance-review-schema.json
         type: JSONSchema
       - url: json-ld/apigovernance-context.jsonld
-        type: JSON-LD
+        type: JSONLD
     description: >-
       APIGovernance.Dev provides automated API governance reviews using AI
       trained on 10,000 public APIs. It offers the API Governance Top-10
