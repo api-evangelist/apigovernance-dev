@@ -4,10 +4,23 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: APIGovernance.Dev
 providerId: apigovernance-dev
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+generated: '2026-09-04'
+modified: '2026-09-04'
+method: searched
+source: https://apigovernance.dev/
+note: >-
+  Replaces the 2026-05-04 bulk-sweep scaffold (roadmap#35), which carried invented
+  request quotas and per-minute rate limits that APIGovernance.Dev has never published.
+  These three tiers are read verbatim from the pricing section of the APIGovernance.Dev
+  home page, which is the only page on the site that states prices — there is no
+  /pricing page (https://apigovernance.dev/pricing returns HTTP 404, probed 2026-09-04).
+  The site publishes prices and feature bullets only; it publishes no API request
+  quotas, no overage rates and no rate limits, so none are recorded here.
+plan_count: 3
+currency: USD
+billingPeriod: month
+pricingPage: https://apigovernance.dev/
+signUp: https://app.apigovernance.dev/home#signup
 tags:
   - API Design
   - API Governance
@@ -15,131 +28,91 @@ tags:
   - Compliance
   - Guidelines
   - Standards
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: >-
+  Published plans and pricing for APIGovernance.Dev, the AI API-governance review
+  product of PerfAI, Inc. Metering is by number of API endpoints under governance and
+  by governance runs, not by API requests.
+evidence:
+  - url: https://apigovernance.dev/
+    status: 200
+    note: 'home page pricing section — "Get Started for FREE!"'
+  - url: https://apigovernance.dev/pricing
+    status: 404
+    note: the pointer previously carried in apis.yml; no such page exists
 plans:
-  - id: apigovernance-dev-free
-    name: Free
+  - id: apigovernance-dev-startup-essentials
+    name: Startup Essentials
     type: freemium
-    description: Free entry tier for the APIGovernance.Dev API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+    price: '0.00'
+    currency: USD
+    timeFrame: month
+    priceLabel: $0/mo
+    description: Ideal for early-stage startups. No credit card required.
+    callToAction: Start Free Trial
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
+      - label: Runs
+        name: runs
         type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: APIGovernance.Dev
-  - id: apigovernance-dev-pro
-    name: Professional
-    type: paid
-    description: Production tier for APIGovernance.Dev. Provides higher quotas, priority support, and
-      access to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains: []
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains: []
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
+        metric: governance_runs
         limit: -1
         timeFrame: month
-        geo: global
-        domains: []
-        unit: 1000
-        price: TBD
-        userMultiplied: false
+        note: 'published as "Runs: Unlimited"'
+      - label: Max Endpoints
+        name: max_endpoints
+        type: quota
+        metric: endpoints
+        limit: 50
+        note: 'published as "Max Endpoints: 50"'
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: APIGovernance.Dev
+      - name: Reports & Badges
+      - name: 'Support: Documentation & Tickets'
+  - id: apigovernance-dev-growth
+    name: Growth
+    type: paid
+    price: '199.00'
+    currency: USD
+    timeFrame: month
+    priceLabel: $199/mo
+    mostPopular: true
+    description: Ideal for growing companies. Everything in Startup Essentials, plus the items below.
+    callToAction: Start Free Trial
+    entries:
+      - label: Runs
+        name: runs
+        type: quota
+        metric: governance_runs
+        limit: -1
+        timeFrame: month
+        note: 'published as "Runs: Unlimited"'
+      - label: Max Endpoints
+        name: max_endpoints
+        type: quota
+        metric: endpoints
+        limit: 100
+        note: 'published as "Max Endpoints: 100"'
+    elements:
+      - name: CI/CD & GitHub Actions
+      - name: 'Integration: API Gateways, Jira, GitHub Issues'
+      - name: Governance Reports & Badges
+      - name: 'Support: Tickets & Calls'
   - id: apigovernance-dev-enterprise
     name: Enterprise
     type: enterprise
-    description: Custom-negotiated tier for APIGovernance.Dev. Includes dedicated capacity, contractual
-      SLAs, security review, data residency options, and named technical account management.
+    price: custom
+    priceLabel: Custom Quote
+    description: For enterprises building APIs. Pricing is quoted; no published rate card.
+    callToAction: Book a Demo
+    callToActionURL: https://calendly.com/perfai/20-mins
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
+      - label: APIs
+        name: apis
         type: quota
-        metric: requests
+        metric: apis
         limit: -1
-        timeFrame: month
-        geo: configurable
-        domains: []
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains: []
-        unit: 1
-        price: custom
-        userMultiplied: false
+        note: 'published as "Unlimited APIs"'
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: APIGovernance.Dev
+      - name: API Gateway Integration
+      - name: 'Support: Tickets & Calls'
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com

@@ -1,0 +1,110 @@
+generated: '2026-09-04'
+method: searched
+source: https://apigovernance.dev/ + https://perfai.ai/llms.txt + https://github.com/PerfAI-Inc
+provider: APIGovernance.Dev
+providerId: apigovernance-dev
+parentCompany: PerfAI, Inc. (trading as Perfai Security, perfai.ai)
+description: >-
+  Lifecycle record for APIGovernance.Dev. The finding of this pass is that the product
+  is legacy: its parent company has repositioned away from API governance and now sells a
+  different product under a different name, while the APIGovernance.Dev marketing site is
+  still served and still sells plans.
+status: legacy
+statusDetail: >-
+  APIGovernance.Dev is one of seven single-purpose product domains PerfAI, Inc. cross-links
+  from the apigovernance.dev footer (apiprivacy.com, apicontract.dev, apiperformance.dev,
+  apirelease.dev, apiversion.dev, apitests.dev, apigovernance.dev). The parent company's own
+  machine-readable statement of record now disclaims that whole line.
+signals:
+  - signal: parent-repositioning
+    detail: >-
+      https://perfai.ai/llms.txt states verbatim: "The company was previously known as
+      PerfAI.ai, an API security and performance testing platform. That positioning is
+      outdated. The company is now Perfai Security (always written 'Perfai Security',
+      never 'PerfAI'), focused exclusively on autonomous application security for AI-native
+      and vibe-coded apps. Disregard older descriptions referencing API performance
+      testing, governance scoring, or privacy validation as the primary product."
+    url: https://perfai.ai/llms.txt
+    status: 200
+    observed: '2026-09-04'
+  - signal: application-host-unreachable
+    detail: >-
+      The only functional call to action on apigovernance.dev — "Get Started" / "Sign in" /
+      "Start Free Trial" — points at https://app.apigovernance.dev/home#signup. That host
+      resolves (A 52.173.146.108) but does not complete a TCP connection on port 443; every
+      HTTP probe timed out. A visitor who clicks the buy button cannot reach the product.
+    url: https://app.apigovernance.dev/home
+    status: 0
+    observed: '2026-09-04'
+  - signal: marketing-site-still-live-and-selling
+    detail: >-
+      apigovernance.dev itself returns HTTP 200 with a complete Builder.io-authored
+      marketing page that still lists three purchasable tiers (Startup Essentials $0/mo,
+      Growth $199/mo, Enterprise custom) and a 2026 copyright line. It also still carries an
+      unreplaced "Lorem ipsum dolor sit amet" placeholder paragraph under "Key Benefits to
+      Business", and its own footer link to /privacy-policy returns HTTP 404.
+    url: https://apigovernance.dev/
+    status: 200
+    observed: '2026-09-04'
+  - signal: engineering-moved-to-the-successor-product
+    detail: >-
+      The PerfAI, Inc. GitHub organization retains two public repositories. The CI/CD
+      integration the Growth plan advertises was PerfAI-Inc/PerfAI-Action; that repository
+      was renamed on 2026-08-07 to PerfAI-Inc/Perfai-Security and rescoped to the successor
+      product ("Perfai - Autonomous Security for AI-built Apps"). Its action.yml now triggers
+      a security scan against api.perfai.ai, not a governance review. The second repository,
+      PingLambda, is archived. No governance-era repository remains.
+    url: https://github.com/PerfAI-Inc
+    status: 200
+    observed: '2026-09-04'
+versioning:
+  scheme: none published
+  policy: null
+  note: APIGovernance.Dev publishes no API, and therefore no API versioning policy.
+deprecation:
+  policy_published: false
+  sunset_header: null
+  deprecation_header: null
+  note: >-
+    No deprecation or sunset policy is published, and no formal end-of-life notice for
+    APIGovernance.Dev has been issued. The product is being retired by attrition rather than
+    by announcement: the positioning is disclaimed on the parent's own site while the
+    storefront keeps selling. NO Deprecation POINTER IS EMITTED — the provider publishes no
+    deprecation policy; this artifact records our observation, not their commitment.
+status_page:
+  published: false
+  url: null
+  note: >-
+    No status page was found on apigovernance.dev or any PerfAI, Inc. host, and no
+    status.* subdomain is advertised. NO StatusPage POINTER IS EMITTED.
+sla:
+  published: false
+  note: The Enterprise tier is quote-only; no SLA document is published.
+support:
+  channels:
+    - name: Documentation & Tickets
+      tiers: [Startup Essentials]
+    - name: Tickets & Calls
+      tiers: [Growth, Enterprise]
+    - name: Book a Demo
+      url: https://calendly.com/perfai/20-mins
+      status: 200
+  note: Support channels are named on the pricing table; no help desk URL is published.
+successor:
+  name: Perfai Security
+  url: https://perfai.ai
+  docs: https://docs.perfai.ai
+  note: >-
+    NOT PROFILED HERE, AND DELIBERATELY NOT HARVESTED INTO THIS REPO. Perfai Security is a
+    different product with its own brand, domain and contract: a real OpenAPI 3.1.1 at
+    https://docs.perfai.ai/api-reference/openapi.yaml whose info.title is "Perfai Security
+    API" and whose servers[] is https://api.perfai.ai/v1; a conformant A2A agent card at
+    https://docs.perfai.ai/.well-known/agent-card.json whose name and provider.organization
+    are both "Perfai Security"; an MCP server; an llms.txt; and a changelog. None of it names
+    API governance, and the parent's llms.txt expressly tells readers to disregard the
+    governance positioning. Attributing that contract to APIGovernance.Dev would be the
+    sibling-product misattribution this pipeline forbids (roadmap#52). It is recorded here as
+    a lead for a separate perfai-security company profile, not as this company's API.
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com

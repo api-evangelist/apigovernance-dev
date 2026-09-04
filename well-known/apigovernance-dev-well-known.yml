@@ -1,0 +1,61 @@
+generated: '2026-09-04'
+method: probed
+source: live GET probes of /.well-known/* and discovery paths on every host this record knows
+provider: APIGovernance.Dev
+providerId: apigovernance-dev
+note: >-
+  Every named discovery document was probed on the registrable domain apigovernance.dev
+  and on the application host the site links to. apigovernance.dev returns a real HTTP 404
+  (a 21,376-byte HTML error page) for every path — an honest, well-behaved absence, and no
+  soft-200. app.apigovernance.dev resolves (52.173.146.108) but does not complete a TCP
+  connection on port 443, so nothing could be read there. www.apigovernance.dev is not
+  covered by the TLS certificate and cannot be fetched over HTTPS at all.
+  NO WellKnown OR SecurityTxt POINTER IS EMITTED: nothing returned a document.
+  The parent company host perfai.ai does serve a real /llms.txt and /sitemap.xml, but it
+  answers HTTP 200 with the same 12,329-byte SPA shell for every /.well-known/* path, so
+  those are recorded as misses, not documents — and in any case that host publishes the
+  Perfai Security product, not APIGovernance.Dev (see lifecycle/).
+hosts:
+  - host: apigovernance.dev
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/aauth-resource.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+      - path: /robots.txt
+        status: 404
+      - path: /sitemap.xml
+        status: 404
+  - host: www.apigovernance.dev
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        note: TLS handshake fails — no alternative certificate subject name matches this host
+  - host: app.apigovernance.dev
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        note: TCP connect to port 443 timed out
+      - path: /.well-known/agent-card.json
+        status: 0
+        note: TCP connect to port 443 timed out
+      - path: /llms.txt
+        status: 0
+        note: TCP connect to port 443 timed out
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
