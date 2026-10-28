@@ -1,4 +1,4 @@
-# APIGovernance.Dev (apigovernance-dev)
+# APIGovernance.Dev
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,108 +64,145 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-APIGovernance.Dev is an AI-powered API governance platform that enforces API best practices through automated reviews trained on 10,000 public APIs. It provides the API Governance Top-10 list of best practices, automated CI/CD integration, and tools to help organizations deliver consistent, industry-standard APIs.
+APIGovernance.Dev is an AI-powered API governance platform that enforces API best practices through automated reviews trained on 10,000 public APIs. It provides the API Governance Top-10 list of best practices, automated CI/CD integration, and tools to help organizations deliver consistent, industry-standard APIs. Powered by PerfAI, Inc.
 
-**URL:** [https://apigovernance.dev/](https://apigovernance.dev/)
+**Areas:** API Design · API Governance · Best Practices · Compliance · Developer Tools · Guidelines · Standards
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## APIGovernance.Dev on APIs.io
 
-## Tags:
+Everything profiled for APIGovernance.Dev is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apigovernance-dev/](https://apis.io/providers/apigovernance-dev/)** — or go straight to one of the APIs or properties below.
 
- - API Design, API Governance, Best Practices, Compliance, Guidelines, Standards
+### APIs (1)
 
-## Timestamps
+- [APIGovernance.Dev](https://apis.io/apis/apigovernance-dev/apigovernance-dev/) — APIGovernance.Dev provides automated API governance reviews using AI trained on 10,000 public APIs. It offers the API Governance Top-10 best practices list,…
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### APIGovernance.Dev
-APIGovernance.Dev provides automated API governance reviews using AI trained on 10,000 public APIs, offering the API Governance Top-10 best practices list and CI/CD integration.
+#### JSON Schema (3)
 
-**Human URL:** [https://apigovernance.dev/](https://apigovernance.dev/)
+The data models the API reads and writes.
 
-#### Tags:
+- [Guideline](https://apis.io/schemas/apigovernance-dev/apigovernance-guideline/)
+- [Policy](https://apis.io/schemas/apigovernance-dev/apigovernance-policy/)
+- [Review](https://apis.io/schemas/apigovernance-dev/apigovernance-review/)
 
- - API Governance, Best Practices, Compliance
+#### JSON Structure (3)
 
-#### Properties
+Data models expressed in JSON Structure.
 
-- [Documentation](https://apigovernance.dev/)
-- [Pricing](https://apigovernance.dev/pricing)
-- [JSONSchema](json-schema/apigovernance-guideline-schema.json)
-- [JSONSchema](json-schema/apigovernance-policy-schema.json)
-- [JSONSchema](json-schema/apigovernance-review-schema.json)
-- [JSON-LD](json-ld/apigovernance-context.jsonld)
+- [Apigovernance Guideline Structure](https://apis.io/json-structure/apigovernance-dev/apigovernance-guideline-structure/)
+- [Apigovernance Policy Structure](https://apis.io/json-structure/apigovernance-dev/apigovernance-policy-structure/)
+- [Apigovernance Review Structure](https://apis.io/json-structure/apigovernance-dev/apigovernance-review-structure/)
 
-## Common Properties
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apigovernance Context](https://apis.io/jsonld/apigovernance-dev/apigovernance-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apigovernance Vocabulary](https://apis.io/vocabularies/apigovernance-dev/apigovernance-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Apigovernance Guideline Example](https://apis.io/examples/apigovernance-dev/apigovernance-guideline-example/)
+- [Apigovernance Policy Example](https://apis.io/examples/apigovernance-dev/apigovernance-policy-example/)
+- [Apigovernance Review Example](https://apis.io/examples/apigovernance-dev/apigovernance-review-example/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [APIGovernance.Dev — jsonschema rules](https://apis.io/rules/apigovernance-dev/apigovernance-dev-jsonschema-spectral-rules/)
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apigovernance Dev Domain Security](https://apis.io/security/apigovernance-dev/apigovernance-dev-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apigovernance Dev Plans Pricing](https://apis.io/plans/apigovernance-dev/apigovernance-dev-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apigovernance Dev Rate Limits](https://apis.io/rate-limits/apigovernance-dev/apigovernance-dev-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apigovernance Dev Finops](https://apis.io/finops/apigovernance-dev/apigovernance-dev-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://apigovernance.dev/)
-- [Pricing](https://apigovernance.dev/pricing)
+- [Pricing](https://apigovernance.dev/)
+- [GitHub](https://github.com/PerfAI-Inc)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| AI-Powered API Reviews | Automated API governance reviews trained on patterns from 10,000 public APIs. |
-| API Governance Top-10 | Curated list of the top 10 API governance best practices across security, design, and documentation. |
-| CI/CD Integration | GitHub Actions and CI/CD pipeline integration for automated governance checks. |
-| API Gateway Integration | Integration with popular API gateways for runtime governance enforcement. |
-| Issue Tracking Integration | Jira and GitHub Issues integration for governance violation tracking. |
+**Kin Score 24.2** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 22.7 |
+| Contract governance | 23.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 42.1 |
 
-| Name | Description |
-|------|-------------|
-| Automated API Review | Automatically review API specifications against governance guidelines before release. |
-| Team Standards Enforcement | Enforce consistent API standards across multiple development teams. |
-| API Design Guidance | Provide developers with actionable best practice guidance during API design. |
-| Compliance Auditing | Audit existing APIs for compliance with organizational governance policies. |
+**Agent readiness 2.5** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| GitHub Actions | CI/CD integration for automated governance checks on API specification changes. |
-| Jira | Create Jira issues for governance violations found during reviews. |
-| GitHub Issues | Create GitHub issues for governance violations. |
-| API Gateways | Integration with API gateway platforms for runtime policy enforcement. |
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
 
-## Solutions
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apigovernance-dev/](https://apis.io/providers/apigovernance-dev/).
 
-| Name | Description |
-|------|-------------|
-| Free Plan | Basic API governance reviews with the API Governance Top-10 checks. |
-| Growth Plan | $199/month with advanced governance automation and CI/CD integration. |
-| Enterprise Plan | Custom pricing with full governance suite, SSO, and dedicated support. |
+## How this profile is made
 
-## Artifacts
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-Machine-readable schemas organized by format.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for APIGovernance.Dev: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-- [apigovernance-guideline-schema.json](json-schema/apigovernance-guideline-schema.json)
-- [apigovernance-policy-schema.json](json-schema/apigovernance-policy-schema.json)
-- [apigovernance-review-schema.json](json-schema/apigovernance-review-schema.json)
-
-### JSON Structure
-
-- [apigovernance-guideline-structure.json](json-structure/apigovernance-guideline-structure.json)
-- [apigovernance-policy-structure.json](json-structure/apigovernance-policy-structure.json)
-- [apigovernance-review-structure.json](json-structure/apigovernance-review-structure.json)
-
-### JSON-LD
-
-- [apigovernance-context.jsonld](json-ld/apigovernance-context.jsonld)
-
-## Vocabulary
-
-- [APIGovernance Vocabulary](vocabulary/apigovernance-vocabulary.yaml) — Unified taxonomy mapping governance guidelines, policies, reviews, and personas across the API governance domain
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apigovernance-dev/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
