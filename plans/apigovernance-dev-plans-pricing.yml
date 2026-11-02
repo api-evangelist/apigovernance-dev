@@ -1,0 +1,148 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: APIGovernance.Dev
+providerId: apigovernance-dev
+created: '2026-05-04'
+generated: '2026-09-04'
+modified: '2026-09-04'
+method: searched
+source: https://apigovernance.dev/
+note: >-
+  Replaces the 2026-05-04 bulk-sweep scaffold (roadmap#35), which carried invented
+  request quotas and per-minute rate limits that APIGovernance.Dev has never published.
+  These three tiers are read verbatim from the pricing section of the APIGovernance.Dev
+  home page, which is the only page on the site that states prices — there is no
+  /pricing page (https://apigovernance.dev/pricing returns HTTP 404, probed 2026-09-04).
+  The site publishes prices and feature bullets only; it publishes no API request
+  quotas, no overage rates and no rate limits, so none are recorded here.
+plan_count: 3
+currency: USD
+billingPeriod: month
+pricingPage: https://apigovernance.dev/
+signUp: https://app.apigovernance.dev/home#signup
+tags:
+  - API Design
+  - API Governance
+  - Best Practices
+  - Compliance
+  - Guidelines
+  - Standards
+description: >-
+  Published plans and pricing for APIGovernance.Dev, the AI API-governance review
+  product of PerfAI, Inc. Metering is by number of API endpoints under governance and
+  by governance runs, not by API requests.
+evidence:
+  - url: https://apigovernance.dev/
+    status: 200
+    note: 'home page pricing section — "Get Started for FREE!"'
+  - url: https://apigovernance.dev/pricing
+    status: 404
+    note: the pointer previously carried in apis.yml; no such page exists
+plans:
+  - id: apigovernance-dev-startup-essentials
+    name: Startup Essentials
+    type: freemium
+    price: '0.00'
+    currency: USD
+    timeFrame: month
+    priceLabel: $0/mo
+    description: Ideal for early-stage startups. No credit card required.
+    callToAction: Start Free Trial
+    entries:
+      - label: Runs
+        name: runs
+        type: quota
+        metric: governance_runs
+        limit: -1
+        timeFrame: month
+        note: 'published as "Runs: Unlimited"'
+      - label: Max Endpoints
+        name: max_endpoints
+        type: quota
+        metric: endpoints
+        limit: 50
+        note: 'published as "Max Endpoints: 50"'
+    elements:
+      - name: Reports & Badges
+      - name: 'Support: Documentation & Tickets'
+  - id: apigovernance-dev-growth
+    name: Growth
+    type: paid
+    price: '199.00'
+    currency: USD
+    timeFrame: month
+    priceLabel: $199/mo
+    mostPopular: true
+    description: Ideal for growing companies. Everything in Startup Essentials, plus the items below.
+    callToAction: Start Free Trial
+    entries:
+      - label: Runs
+        name: runs
+        type: quota
+        metric: governance_runs
+        limit: -1
+        timeFrame: month
+        note: 'published as "Runs: Unlimited"'
+      - label: Max Endpoints
+        name: max_endpoints
+        type: quota
+        metric: endpoints
+        limit: 100
+        note: 'published as "Max Endpoints: 100"'
+    elements:
+      - name: CI/CD & GitHub Actions
+      - name: 'Integration: API Gateways, Jira, GitHub Issues'
+      - name: Governance Reports & Badges
+      - name: 'Support: Tickets & Calls'
+  - id: apigovernance-dev-enterprise
+    name: Enterprise
+    type: enterprise
+    price: custom
+    priceLabel: Custom Quote
+    description: For enterprises building APIs. Pricing is quoted; no published rate card.
+    callToAction: Book a Demo
+    callToActionURL: https://calendly.com/perfai/20-mins
+    entries:
+      - label: APIs
+        name: apis
+        type: quota
+        metric: apis
+        limit: -1
+        note: 'published as "Unlimited APIs"'
+    elements:
+      - name: API Gateway Integration
+      - name: 'Support: Tickets & Calls'
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Startup Essentials
+    access: freemium
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Growth
+    access: paid
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Enterprise
+    access: enterprise
+    model: free
+    model_how: derived
+    units:
+    - other
+    periods: []
